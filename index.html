@@ -10,18 +10,16 @@
       <article>
         <header>
           <h1 >My Photo Album</h1>
-          <button name="button">Login</button>
+          <button id="login" name="button">Login</button>
         </header>
       </article>
 
       <div class="search">
-        <form action="0">
-          <input id="GET-images" type="text" name="searchImages">
-          <input type="submit" value="Search">
-        </form>
+        <input id="searchInput" type="text" name="searchImages">
+        <button id="search">Search</button>
       </div>
 
-      <div class="main">
+      <div class="main" id="main">
         <figure class="picThumbnail">
           <img src="./photos/1co42k3.jpg" alt="The Pulpit Rock" class="thumbImg">
           <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
@@ -70,5 +68,6 @@
       <footer>
         <p>Rhys Williams - s2901277</p>
       </footer>
+      <script src="js/app.js"></script>
     </body>
 </html>

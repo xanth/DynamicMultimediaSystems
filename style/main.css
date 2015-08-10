@@ -54,3 +54,8 @@ footer {
 .main {
   padding-bottom: 30px;
 }
+
+.odd {
+  background: black;
+  color: white;
+}
