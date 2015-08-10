@@ -26,7 +26,31 @@ footer {
   left: 5px;
   right: 5px;
   bottom: 0;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
   text-align: center;
   color: white;
+}
+
+.search {
+  float: right;
+}
+
+.picThumbnail {
+  float: left;
+  font-size: 12px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+}
+
+.thumbImg {
+  max-width:300px;
+  max-height: 300px;
+  width:auto;
+}
+
+.main {
+  padding-bottom: 30px;
 }
