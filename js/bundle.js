@@ -42,9 +42,46 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _filterableFiguresEs6Js = __webpack_require__(1);
+
+	var _filterableFiguresEs6Js2 = _interopRequireDefault(_filterableFiguresEs6Js);
+
+	var figs;
+
+	$("#searchInput").keypress(function (e) {
+	  if (e.which == 13) {
+	    e.preventDefault();
+	    figs = figs || new _filterableFiguresEs6Js2["default"]($(".main figure"));
+	    var filtered = figs.Filter($(e.target).val());
+	    if (filtered.length > 0) {
+	      $('.main').html(filtered);
+	      $(".noresults").hide();
+	    } else {
+	      $('.main').html("");
+	      $(".noresults").show();
+	    }
+	  }
+	});
+
+	document.getElementById('login').addEventListener("click", function () {
+	  alert("You cant do that bro");
+	});
+
+/***/ },
+/* 1 */
 /***/ function(module, exports) {
 
 	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -69,26 +106,8 @@
 	  return FilterableFigures;
 	})();
 
-	var figs;
-
-	$("#searchInput").keypress(function (e) {
-	  if (e.which == 13) {
-	    e.preventDefault();
-	    figs = figs || new FilterableFigures($(".main figure"));
-	    var filtered = figs.Filter($(e.target).val());
-	    if (filtered.length > 0) {
-	      $('.main').html(filtered);
-	      $(".noresults").hide();
-	    } else {
-	      $('.main').html("");
-	      $(".noresults").show();
-	    }
-	  }
-	});
-
-	document.getElementById('login').addEventListener("click", function () {
-	  alert("You cant do that bro");
-	});
+	exports["default"] = FilterableFigures;
+	module.exports = exports["default"];
 
 /***/ }
 /******/ ]);
