@@ -1,14 +1,29 @@
-document.getElementById('search').addEventListener("click", () => {
-  var value = document.getElementById('searchInput').value;
-  if(isNaN(value)){
-    alert("invalid input");
-    return;
+class FilterableFigures {
+  constructor(dom){
+    this.elements = dom;
   }
-  let picThumbnail = document.getElementsByClassName('picThumbnail')[0].innerHTML;
-  let main  = document.getElementById("main");
-  main.innerHTML = "";
-  while(value-- > 0){
-    main.innerHTML += `<figure class="picThumbnail ${value % 2 == 0 ? "odd" : ""}">` + picThumbnail + `</figure>` ;
+
+  Filter(filter){
+    return filter.trim() === "" ? this.elements : _(this.elements).filter((element) => {
+      return element.textContent.toLowerCase().indexOf(filter.trim().toLowerCase()) !== -1;
+    }).value();
+  }
+}
+
+var figs;
+
+$("#searchInput").keypress( (e) => {
+  if (e.which == 13) {
+    e.preventDefault();
+    figs = figs || new FilterableFigures($(".main figure"));
+    var filtered = figs.Filter($(e.target).val());
+    if(filtered.length > 0){
+      $('.main').html(filtered);
+      $(".noresults").hide();
+    } else {
+      $('.main').html("");
+      $(".noresults").show();
+    }
   }
 });
 
