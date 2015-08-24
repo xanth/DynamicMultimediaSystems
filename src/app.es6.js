@@ -1,8 +1,24 @@
-import FilterableFigures from "./filterableFigures.es6.js" 
+const $ = require('jquery');
+
+import FilterableFigures from "./filterableFigures.es6.js"
 
 var figs;
 
-$("#searchInput").keypress( (e) => {
+let splashBtnWelcome  = $("#splash-btn-welcome");
+let splashBtnBack     = $("#splash-btn-back");
+let images            = $("#images");
+
+splashBtnWelcome.click(() => {
+  splashBtnWelcome.hide();
+  images.show('slow');
+});
+
+splashBtnBack.click(() => {
+  images.hide();
+  splashBtnWelcome.show('slow');
+});
+
+$("#searchInput").keypress((e) => {
   if (e.which == 13) {
     e.preventDefault();
     figs = figs || new FilterableFigures($(".main figure"));
