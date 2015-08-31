@@ -1,0 +1,20 @@
+{
+  "name": "3622ICT-Week1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/xanth/DynamicMultimediaSystems",
+  "authors": [
+    "Rhys <rhys@xanth.io>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lightbox2": "~2.8.1",
+    "skeleton": "~2.0.4"
+  }
+}

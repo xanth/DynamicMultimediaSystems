@@ -116,7 +116,7 @@
 	    key: "Filter",
 	    value: function Filter(filter) {
 	      if (filter === null || filter === undefined) {
-	        return "";
+	        return new Array();
 	      } else if (filter.trim() === "") {
 	        return this.elements;
 	      } else {

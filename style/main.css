@@ -31,6 +31,12 @@ footer {
   color: white;
 }
 
+.welcome-hand {
+  -webkit-animation-name: color, spin;
+  -webkit-animation-duration: 2s, 4s;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-direction: alternate;
+}
 .splash {
   display: flex;
   justify-content: center;
@@ -64,4 +70,23 @@ footer {
 .odd {
   background: black;
   color: white;
+}
+
+/* Animation code */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes color {
+  0%   {
+    background-color: red;
+  }
+  33%  {
+    background-color: yellow;
+  }
+  100% {
+    background-color: green;
+  }
 }
