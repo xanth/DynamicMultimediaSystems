@@ -45,6 +45,22 @@ footer {
 
 .search {
   float: right;
+  display: inline-block;
+}
+
+.animMenu {
+  position: absolute;
+  right: -55px;
+  top: 170px;
+}
+
+.menuBtn {
+  animation: slide 1s forwards;
+  animation-play-state: paused;
+}
+
+.menuBtn:hover {
+  animation-play-state: running;
 }
 
 .picThumbnail {
@@ -65,6 +81,7 @@ footer {
 
 .main {
   padding-bottom: 30px;
+  width: 70%;
 }
 
 .odd {
@@ -89,4 +106,8 @@ footer {
   100% {
     background-color: green;
   }
+}
+
+@keyframes slide {
+    100% { left: 0; }
 }
